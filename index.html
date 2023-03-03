@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tanmoy Portfolio</title>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+    </style>
+</head>
+<body>
+
+  <nav class="bg-white shadow-lg sticky top-0 bg-indigo-700">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center py-1 px-2">
+              <img id="image  rounded-full " src="logo1.png"   alt="Logo" class="h-12 w-14 ">
+              <span class="font-semibold text-white text-lg px-4">Tanmoy Bhattacharjee</span>
+            </a>
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#home" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Home</a>
+            <a href="#about" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">About</a>
+            <a href="#resume" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Resume</a>
+            <a href="#services" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Services</a>
+            <a href="#projects" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Projects</a>
+            <a href="#contact" class="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">Contact</a>
+          </div>
+        </div>
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3 ">
+          <a href="" class="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-gray-600 transition duration-300">PORTFOLIO</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button">
+          <svg class=" w-6 h-6 text-gray-600 hover:text-green-500 "
+            x-show="!showMenu"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        </div>
+      </div>
+    </div>
+    <!-- mobile menu -->
+    <div class="hidden mobile-menu">
+      <ul class="">
+        <li class="active"><a href="#home" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Home</a></li>
+        <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
+        <li><a href="#resume" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Resume</a></li>
+        <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
+        <li><a href="#projects" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Projects</a></li>
+        <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact</a></li>
+      </ul>
+    </div>
+    <script>
+      const btn = document.querySelector("button.mobile-menu-button");
+      const menu = document.querySelector(".mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </nav>
+ 
+  
+    <!-- Navbar -->
+    <!-- <header class="text-gray-600 body-font sticky top-0 bg-indigo-700 text-gray-600">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto text-gray-600">
+                <a href="#home" class="mr-5 hover:text-gray-900">Home</a>
+                <a href="#about" class="mr-5 hover:text-gray-900">About</a>
+                <a href="#resume" class="mr-5 hover:text-gray-900">Resume</a>
+                <a href="#services" class="mr-5 hover:text-gray-900">Services</a>
+                <a href="#projects" class="mr-5 hover:text-gray-900">Projects</a>                
+                <a href="#blog" class="mr-5 hover:text-gray-900">Blog</a>
+                <a href="#contact" class="mr-5 hover:text-gray-900">Contact</a>
+
+            </nav>
+            <a
+                class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+                <span class="ml-3 text-xl text-gray-600 font-bold">PortFolio</span>
+            </a>
+        </div>
+    </header> -->
+
+    <!-- Main page -->
+    <section id="home" class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl font-medium text-gray-900">I'm Software Developer
+                    <br class="hidden lg:inline-block">
+                    <h1 class="title-font sm:text-4xl text-3xl font-medium text-gray-900 font-bold">Tanmoy Bhattacharjee</h1>
+                </h1>
+                <p class="mb-8 leading-relaxed">
+                  Hey!! I am Tanmoy Bhattacharjee, B.Tech undergrad at NIT Agartala, pursuing Electronics and communication Engineering. I enjoy creating stuffs with coding. I have not yet explored much but I love to explore different fields.
+                </p>
+                <div class="flex justify-center">
+                    <button
+                        class="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"> <a href="resume.pdf"> Resume</a>
+                      </button>
+                    <button
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a href="#projects">Projects</a></button>
+                </div>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded-full circle " alt="hero" src="IMG_20230303_165749.jpg " >
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- About Section -->
+    <section id="about" class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded" alt="hero"
+                    src="quote.jpg">
+            </div>
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 font-bold">About Me
+                </h1>
+                <br>
+                <br>
+                <p class="mb-8 leading-relaxed font-bold text-lg">
+                    Name:
+                    Tanmoy Bhattacharjee
+                    <br>
+                    <br>
+                    Date of birth:
+                    October 16, 2002
+                    <br>
+                    <br>
+                    Address:
+                    Agartala Tripura India
+                    <br>
+                    <br>
+                    Pin code:
+                    799007
+                    <br>
+                    <br>
+                    Email:
+                    bhattacharjeetanmoy1234@gmail.com
+                    <br>
+                    <br>
+                    Phone:
+                    +91 *******789
+                </p>
+            </div>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+              <a href="https://www.facebook.com/tanmoy.bhattacharjee.5851?mibextid=ZbWKwL" target="_blank" class="text-gray-600">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/tanmoy-bhattacharjee-b197b0230" target="_blank" class="ml-3 text-gray-600">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Resume Section -->
+    <section id="resume" class="text-gray-600 body-font">
+        <div class="container mx-auto flex md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 font-bold">My Resume
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Education
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap">
+        <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-gray-600 relative z-10 title-font font-medium text-sm">1</div>
+          <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+            <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Shishu Niketan H.S School</h2>
+              <p class="leading-relaxed">2007-2019. I have studied more than 10 years in this school. Its like my second home. A lot of memories are present in SPS.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-gray-600 relative z-10 title-font font-medium text-sm">2</div>
+          <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+            <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Umakanta Academy,Agartala</h2>
+              <p class="leading-relaxed">2019-2021. I have given my 12th Board exam from this school. I have studied here for 2 years only but i liked the facilities for students in this school.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+          <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-gray-600 relative z-10 title-font font-medium text-sm">3</div>
+          <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+            <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+              <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">NIT Agartala</h2>
+              <p class="leading-relaxed">2021-Present. I am only a first year undergrad at NIT Agartala. I have not experienced here enough but hoping to create a hell lot of memories here too.Since it will be my college life,right!!</p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">My Skills
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="webdev.png">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">WEB DEVELOPMENT</h2>
+                  <p class="text-gray-600">50%</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="dsa.png">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">DATA STRUCTURES & ALGO</h2>
+                  <p class="text-gray-600">30%</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="videoediting.png">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">VIDEO EDITING</h2>
+                  <p class="text-gray-600">40%</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="teach.jpg">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">TEACHING</h2>
+                  <p class="text-gray-600">80%</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="sports.jpg">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">SPORTSMEN</h2>
+                  <p class="text-gray-600">100%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> 
+
+      <!-- Services Section -->
+      <section id="services" class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 font-bold">My Services</h1>
+          </div>
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">WEB DEVELOPMENT</h2>
+                </div>
+                <div class="flex-grow">
+                  <!-- <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p> -->
+                  <a href="#contact" class="mt-3 text-indigo-500 inline-flex items-center">Contact Me
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">TEACHING</h2>
+                </div>
+                <div class="flex-grow">
+                  <!-- <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p> -->
+                  <a href="#contact" class="mt-3 text-indigo-500 inline-flex items-center">Contact Me
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <circle cx="6" cy="6" r="3"></circle>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">VIDEO EDITING</h2>
+                </div>
+                <div class="flex-grow">
+                  <!-- <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p> -->
+                  <a href="#contact" class="mt-3 text-indigo-500 inline-flex items-center">Contact Me
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 font-bold">My Projects</h1>
+              </div>
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="textutil.png" alt="blog">
+                <div class="p-6">
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Ecommerce Website</h1>
+                  <p class="leading-relaxed mb-3">coming soon</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Github Link 
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>1.2K
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>6
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="dailynews.png" alt="blog">
+                <div class="p-6">
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Daily News Website</h1>
+                  <p class="leading-relaxed mb-3">coming soon</p>
+                  <div class="flex items-center flex-wrap">
+                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Github Link
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>1.2K
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>6
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="2023-03-03 (2).png" alt="blog">
+                <div class="p-6">
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">PortFolio Website</h1>
+                  <p class="leading-relaxed mb-3">coming soon</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Github Link
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>1.2K
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>6
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 font-bold">Contact Me</h1>
+              </div>
+          <div class="flex flex-wrap -m-4">
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" src="address.png" alt="content">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Address- Agartala Tripura India</h2>
+                <p class="leading-relaxed text-base"></p>
+              </div>
+              <!-- Netaji Chowmuhani,Town Bordowali, Agartala Tripura India. -->
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" src="phone.jpg" alt="content">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Contact Number- +91 *******789</h2>
+                <p class="leading-relaxed text-base"></p>
+              </div>
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" src="email.png" alt="content">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Email Address-bhattacharjeetanmoy1234@gmail.com</h2>
+                <p class="leading-relaxed text-base"></p>
+              </div>
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" src="website.jpg" alt="content">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Website-www.tanmoybhattacharjee.com</h2>
+                <p class="leading-relaxed text-base"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-gray-600 body-font relative">
+        <div class="container px-5 mx-auto">
+          <form action="https://formspree.io/f/xrgjybad" method="POST">
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                  <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                  <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                  <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">SEND MESSAGE</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <span class="ml-3 text-xl">Tanmoy Bhattacharjee</span>
+          </a>
+          <p class="text-sm text-gray-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">� 2022 TanmoyBhattacharjee �
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a href="https://www.facebook.com/tanmoy.bhattacharjee.5851?mibextid=ZbWKwL" target="_blank" class="text-gray-600">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/tanmoy-bhattacharjee-b197b0230" target="_blank" class="ml-3 text-gray-600">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+</body>
+
+</html>
